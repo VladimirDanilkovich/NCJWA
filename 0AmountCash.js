@@ -15,6 +15,7 @@ describe('0 Amount Cash', function() {
   })
   it('0 Amount Cash', async function() {
     await driver.get("https://ncjwavic--dev.lightning.force.com/lightning/n/Bulk_Donations")
+    await driver.sleep(7000)
     await driver.findElement(By.xpath("//td[2]/div/div/div[2]/div/input")).click()
     await driver.findElement(By.xpath("//td[2]/div/div/div[2]/div/input")).sendKeys("mr selen")
     await driver.findElement(By.css(".slds-lookup__list:nth-child(2) .slds-media")).click()
