@@ -20,6 +20,7 @@ describe('0 Amount Cash', function() {
     await driver.sleep(7000)
     await driver.findElement(By.xpath("//td[2]/div/div/div[2]/div/input")).click()
     await driver.findElement(By.xpath("//td[2]/div/div/div[2]/div/input")).sendKeys("mr selen")
+    await driver.sleep(3000)
     await driver.findElement(By.css(".slds-lookup__list:nth-child(2) .slds-media")).click()
     await driver.findElement(By.xpath("//td[3]/div/div/div[2]/div/input")).click()
     await driver.findElement(By.xpath("//td[3]/div/div/div[4]/ul/li/span/div/span")).click()
