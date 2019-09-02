@@ -14,6 +14,8 @@ describe('0 Amount Cash', function() {
     await driver.quit();
   })
   it('0 Amount Cash', async function() {
+    
+    await driver.sleep(7000)
     await driver.get("https://ncjwavic--dev.lightning.force.com/lightning/n/Bulk_Donations")
     await driver.sleep(7000)
     await driver.findElement(By.xpath("//td[2]/div/div/div[2]/div/input")).click()
