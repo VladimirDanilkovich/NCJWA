@@ -3,7 +3,7 @@ const { Builder, By, Key, until } = require('selenium-webdriver')
 const assert = require('assert') 
 
 describe('Cheque', function() {
-  this.timeout(30000)
+  this.timeout(60000)
   let driver
   let vars
   beforeEach(async function() {
@@ -29,11 +29,12 @@ describe('Cheque', function() {
       await dropdown.findElement(By.css("*:nth-child(2)")).click()
     }
     await driver.findElement(By.css(".slds-scrollable_y")).click()
+    await driver.sleep(3000)
     await driver.findElement(By.xpath("//td[2]/lightning-input/lightning-datepicker/div/div/input")).sendKeys("18/08/2019")
     await driver.findElement(By.xpath("//td[3]/lightning-input/div/input")).click()
     await driver.findElement(By.xpath("//td[3]/lightning-input/div/input")).sendKeys("128492948503")
     await driver.findElement(By.xpath("//tr[2]/td[4]/lightning-input/div/input")).sendKeys("ddd")
     await driver.findElement(By.xpath("//button[contains(.,\'Save\')]")).click()
-    await driver.wait(until.elementLocated(By.css(".slds-theme--success")), 12000)
+    await driver.wait(until.elementLocated(By.css(".slds-theme--success")), 35000)
   })
 })
