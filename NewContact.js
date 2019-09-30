@@ -17,6 +17,7 @@ describe('New Contact', function() {
     await driver.get("https://ncjwavic--dev.lightning.force.com/lightning/n/Bulk_Donations")
     await driver.findElement(By.xpath("//td[2]/div/div/div[2]/div/input")).click()
     await driver.findElement(By.css(".slds-lookup__item-action--label")).click()
+    await driver.sleep(5000)
     await driver.findElement(By.xpath("//div[2]/lightning-input/div/input")).sendKeys("Selenium2")
     await driver.findElement(By.xpath("//div[3]/lightning-input/div/input")).sendKeys("Test2")
     await driver.findElement(By.xpath("//div[3]/button[2]")).click()
