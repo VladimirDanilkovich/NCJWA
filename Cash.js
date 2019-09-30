@@ -29,6 +29,7 @@ describe('Cash', function() {
     }
     await driver.findElement(By.xpath("//button[contains(.,\'Save\')]")).click()
     await driver.sleep(5000)
-    await driver.wait(until.elementLocated(By.css(".slds-theme--success")), 30000)
+    //await driver.wait(until.elementLocated(By.css(".slds-theme--success")), 30000)
+    await driver.wait(until.elementIsVisible(await driver.findElement(By.css(".slds-theme--success"))), 25000)
   })
 })
