@@ -21,12 +21,13 @@ describe('Cheque', function() {
     await driver.findElement(By.xpath("//td[3]/div/div/div[4]/ul/li/span/div/span")).click()
     await driver.findElement(By.xpath("//lightning-input/div/input")).click()
     await driver.findElement(By.xpath("//lightning-input/div/input")).sendKeys("20")
-    await driver.sleep(5000)
-    await driver.findElement(By.xpath("//lightning-datepicker/div/div/input")).sendKeys("31/07/2020")
-    await driver.findElement(By.xpath("//td[6]/div/div/div/select")).click()
+    await driver.sleep(3000)
+    await driver.findElement(By.xpath("//lightning-input[1]/lightning-datepicker[1]/div[1]/div[1]/input[1]")).sendKeys("31/07/2020")
+    //lightning-datepicker/div/div/input
+    //await driver.findElement(By.xpath("//td[6]/div/div/div/select")).click()
     {
       const dropdown = await driver.findElement(By.xpath("//td[6]/div/div/div/select"))
-      await dropdown.findElement(By.css("*:nth-child(2)")).click()
+      await dropdown.findElement(By.css("*[value='Cheque']")).click()
     }
     await driver.findElement(By.css(".slds-scrollable_y")).click()
     await driver.sleep(3000)
