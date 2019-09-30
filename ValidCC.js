@@ -25,7 +25,8 @@ describe('Valid CC', function() {
     await driver.findElement(By.xpath("//td[6]/div/div/div/select")).click()
     {
       const dropdown = await driver.findElement(By.xpath("//td[6]/div/div/div/select"))
-      await dropdown.findElement(By.css("*:nth-child(3)")).click()
+      await dropdown.findElement(By.css("*[value='Credit Card']")).click()
+      
     }
     await driver.sleep(5000)
     //await driver.findElement(By.xpath("//td[2]/lightning-input/div/input")).click()
