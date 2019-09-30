@@ -29,6 +29,6 @@ describe('Direct Deposit', function() {
     }
     await driver.findElement(By.xpath("//td[2]/lightning-input/div/input")).sendKeys("1234859475294")
     await driver.findElement(By.xpath("//button[contains(.,\'Save\')]")).click()
-    await driver.wait(until.elementLocated(By.css(".slds-theme--success")), 10000)
+    await driver.wait(until.elementLocated(By.css(".slds-theme--success")), 35000)
   })
 })
