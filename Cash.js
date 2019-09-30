@@ -25,10 +25,10 @@ describe('Cash', function() {
     await driver.findElement(By.xpath("//td[6]/div/div/div/select")).click()
     {
       const dropdown = await driver.findElement(By.xpath("//td[6]/div/div/div/select"))
-      await dropdown.findElement(By.css("*:nth-child(1)")).click()
+      await dropdown.findElement(By.css("*[value='Cash']")).click()
     }
     await driver.findElement(By.xpath("//button[contains(.,\'Save\')]")).click()
     await driver.sleep(5000)
-    await driver.wait(until.elementLocated(By.css(".slds-theme--success")), 40000)
+    await driver.wait(until.elementLocated(By.css(".slds-theme--success")), 30000)
   })
 })
