@@ -21,6 +21,7 @@ describe('Cheque', function() {
     await driver.findElement(By.xpath("//td[3]/div/div/div[4]/ul/li/span/div/span")).click()
     await driver.findElement(By.xpath("//lightning-input/div/input")).click()
     await driver.findElement(By.xpath("//lightning-input/div/input")).sendKeys("20")
+    await driver.sleep(5000)
     await driver.findElement(By.xpath("//lightning-datepicker/div/div/input")).sendKeys("31/07/2020")
     await driver.findElement(By.xpath("//td[6]/div/div/div/select")).click()
     {
