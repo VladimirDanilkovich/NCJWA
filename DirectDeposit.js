@@ -3,7 +3,7 @@ const { Builder, By, Key, until } = require('selenium-webdriver')
 const assert = require('assert')
 
 describe('Direct Deposit', function() {
-  this.timeout(30000)
+  this.timeout(65000)
   let driver
   let vars
   beforeEach(async function() {
