@@ -22,13 +22,14 @@ describe('Direct Deposit', function() {
     await driver.findElement(By.xpath("//td[3]/div/div/div[4]/ul/li/span/div/span")).click()
     await driver.findElement(By.xpath("//lightning-input/div/input")).click()
     await driver.findElement(By.xpath("//lightning-input/div/input")).sendKeys("20")
-    await driver.findElement(By.xpath("//td[6]/div/div/div/select")).click()
+    //await driver.findElement(By.xpath("//td[6]/div/div/div/select")).click()
     {
       const dropdown = await driver.findElement(By.xpath("//td[6]/div/div/div/select"))
-      await dropdown.findElement(By.css("*:nth-child(4)")).click()
+      //await dropdown.findElement(By.css("*:nth-child(4)")).click()
+      await dropdown.findElement(By.css("*[value='Direct Deposit']")).click()
     }
     await driver.findElement(By.xpath("//td[2]/lightning-input/div/input")).sendKeys("1234859475294")
     await driver.findElement(By.xpath("//button[contains(.,\'Save\')]")).click()
-    await driver.wait(until.elementLocated(By.css(".slds-theme--success")), 35000)
+    await driver.wait(until.elementLocated(By.css(".slds-theme--success")), 30000)
   })
 })
