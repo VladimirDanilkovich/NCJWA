@@ -30,7 +30,7 @@ describe('Cheque', function() {
     }
     await driver.findElement(By.css(".slds-scrollable_y")).click()
     await driver.sleep(3000)
-    await driver.findElement(By.xpath("//td[2]/lightning-input/lightning-datepicker/div/div/input")).sendKeys("18/08/2019")
+    await driver.findElement(By.xpath("//td[2]/lightning-input/lightning-datepicker/div/div/input")).sendKeys("18/08/2020")
     await driver.findElement(By.xpath("//td[3]/lightning-input/div/input")).click()
     await driver.findElement(By.xpath("//td[3]/lightning-input/div/input")).sendKeys("128492948503")
     await driver.findElement(By.xpath("//tr[2]/td[4]/lightning-input/div/input")).sendKeys("ddd")
