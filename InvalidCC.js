@@ -27,7 +27,7 @@ describe('Invalid CC', function() {
       await dropdown.findElement(By.css("*:nth-child(3)")).click()
     }
     await driver.sleep(5000)
-    await driver.findElement(By.xpath("//td[2]/lightning-input/div/input")).click()
+    //await driver.findElement(By.xpath("//td[2]/lightning-input/div/input")).click()
     await driver.findElement(By.xpath("//td[2]/lightning-input/div/input")).sendKeys("4444444444444444")
     {
       const dropdown = await driver.findElement(By.xpath("//td[3]/div/div/div/select"))
