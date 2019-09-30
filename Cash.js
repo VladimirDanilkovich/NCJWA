@@ -3,7 +3,7 @@ const { Builder, By, Key, until } = require('selenium-webdriver')
 const assert = require('assert')
 
 describe('Cash', function() {
-  this.timeout(60000)
+  this.timeout(70000)
   let driver
   let vars
   beforeEach(async function() {
@@ -27,6 +27,7 @@ describe('Cash', function() {
       await dropdown.findElement(By.css("*:nth-child(1)")).click()
     }
     await driver.findElement(By.xpath("//button[contains(.,\'Save\')]")).click()
-    await driver.wait(until.elementLocated(By.css(".slds-theme--success")), 35000)
+    await driver.sleep(5000)
+    await driver.wait(until.elementLocated(By.css(".slds-theme--success")), 40000)
   })
 })
