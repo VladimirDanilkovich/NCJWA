@@ -15,7 +15,7 @@ describe('Cheque', function() {
   })
   it('Cheque', async function() {
     await driver.get("https://ncjwavic--dev.lightning.force.com/lightning/n/Bulk_Donations")
-    await driver.findElement(By.xpath("//td[2]/div/div/div[2]/div/input")).click()
+    await driver.sleep(5000)
     await driver.findElement(By.xpath("//td[2]/div/div/div[2]/div/input")).sendKeys("mr selen")
     await driver.findElement(By.xpath("//td[3]/div/div/div[2]/div/input")).click()
     await driver.findElement(By.xpath("//td[3]/div/div/div[4]/ul/li/span/div/span")).click()
