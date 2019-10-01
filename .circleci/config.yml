@@ -9,6 +9,7 @@ jobs:
       # specify the version you desire here
       - image: circleci/node:latest
       - image: selenium/standalone-chrome:3.11.0
+      
       # Specify service dependencies here if necessary  
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
@@ -16,7 +17,6 @@ jobs:
     working_directory: ~/repo
             
     steps:
-    
       - checkout    
       - setup_remote_docker
       # Download and cache dependencies
@@ -44,11 +44,6 @@ jobs:
       - run:
           name: install selenium-node
           command: docker run -d --rm --net grid -e HUB_HOST=selenium-hub -v /dev/shm:/dev/shm selenium/node-chrome:3.11.0
-          
-          comand: instal runner 
-run: npm instal selenium side runner
-          
-          
       - run:
           name: install-mocha
           command: sudo npm install -g mocha
