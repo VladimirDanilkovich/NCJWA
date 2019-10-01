@@ -215,14 +215,8 @@
     "mocha": "^5.2.0",
     "selenium-webdriver": "^4.0.0-alpha.1"
   },
-    //"scripts": {
-  //"test": "mocha index-updated.js --retries 5"
- // }
-    
     "scripts": {
-  "test": "npm run lint && npm run mocha-tests && echo 'Done.'",
-  "lint": "eslint . --max-warnings=0 --report-unused-disable-directives && echo 'Your .js files look so good.' && lesshint assets/styles/ --max-warnings=0 && echo 'Your .less files look good, too.'",
-  "mocha-tests": "node ./node_modules/mocha/bin/mocha test/lifecycle.test.js test/integration/**/*.test.js",
-}
+  "test": "mocha index-updated.js --retries 5"
+  }
     
 }
