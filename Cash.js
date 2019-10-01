@@ -19,6 +19,8 @@ describe('Cash', function() {
     await driver.findElement(By.xpath("//td[2]/div/div/div[2]/div/input")).click()
     await driver.findElement(By.xpath("//td[2]/div/div/div[2]/div/input")).sendKeys("mr selen")
     await driver.findElement(By.xpath("//td[3]/div/div/div[2]/div/input")).click()
+    await driver.findElement(By.xpath("//div[4]/ul/li/span/div/div")).click()
+    await driver.findElement(By.xpath("//td[3]/div/div/div[2]/div/input")).click()
     await driver.findElement(By.xpath("//td[3]/div/div/div[4]/ul/li/span/div/span")).click()
     await driver.findElement(By.xpath("//lightning-input/div/input")).click()
     await driver.findElement(By.xpath("//lightning-input/div/input")).sendKeys("20")
@@ -29,7 +31,6 @@ describe('Cash', function() {
     }
     await driver.findElement(By.xpath("//button[contains(.,\'Save\')]")).click()
     await driver.sleep(5000)
-    //await driver.wait(until.elementLocated(By.css(".slds-theme--success")), 30000)
     await driver.wait(until.elementLocated(By.css(".slds-theme--success")), 30000)
   })
 })
