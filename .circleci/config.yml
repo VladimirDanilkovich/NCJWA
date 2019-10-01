@@ -17,6 +17,20 @@ jobs:
     working_directory: ~/repo
             
     steps:
+    
+      - run: mkdir ~/junit
+      - run:
+          command: mocha test --reporter mocha-junit-reporter
+          environment:
+            MOCHA_FILE: ~/junit/test-results.xml
+          when: always
+      - store_test_results:
+          path: ~/junit
+      - store_artifacts:
+          path: ~/junit          
+
+    
+    
       - checkout    
       - setup_remote_docker
       # Download and cache dependencies
