@@ -7,7 +7,7 @@ describe('Cash', function() {
   let driver
   let vars
   beforeEach(async function() {
-    driver = await new Builder().forBrowser('chrome').build()
+    driver = await new Builder().forBrowser('firefox').build()
     vars = {}
   })
   afterEach(async function() {
