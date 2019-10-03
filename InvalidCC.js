@@ -29,8 +29,7 @@ describe('Invalid CC', function() {
     }
     await driver.sleep(5000)
     //await driver.findElement(By.xpath("//td[2]/lightning-input/div/input")).click()
-    await driver.findElement(By.xpath("//table[1]/tbody[1]/tr[2]/td[2]/lightning-input[1]/div[1]/input[1]")).sendKeys("4444444444444444")
-    //td[2]/lightning-input/div/input
+    await driver.findElement(By.xpath("//td[2]/lightning-input/div/input")).sendKeys("4444444444444444")
     {
       const dropdown = await driver.findElement(By.xpath("//td[3]/div/div/div/select"))
       await dropdown.findElement(By.xpath("//option[. = '02']")).click()
