@@ -32,6 +32,7 @@ describe('0 Amount Cash', function() {
       await dropdown.findElement(By.css("*:nth-child(1)")).click()
     }
     await driver.findElement(By.xpath("//button[contains(.,\'Save\')]")).click()
+    driver.findElement(By.xpath("//button[contains(.,\'Save\')]")).sendKeys(Keys.SHIFT + COMMAND + "3");
     await driver.wait(until.elementLocated(By.css(".slds-theme--error")), 10000)
   })
 })
