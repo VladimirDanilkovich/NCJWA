@@ -27,5 +27,5 @@ do
 done
 if [ "$key" = "false" ]
 then
-screencapture ~/Desktop/screenshot.jpg && echo"Cool Beans"
+echo"Cool Beans"
 fi
