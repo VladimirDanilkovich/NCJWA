@@ -35,9 +35,7 @@ describe('0 Amount Cash', function() {
     await driver.wait(until.elementLocated(By.css(".slds-theme--error")), 10000)
   })
   
-  filename = Join-Path (Get-Location).Path "01_GoogleLandingPage.png"
-  screenshot = driver.GetScreenshot()
-  screenshot.SaveAsFile(filename, [System.Drawing.Imaging.ImageFormat]::Png)
+  browser.saveScreenshot('/tmp/artifacts/screenShot.png');
    });
 });
   
