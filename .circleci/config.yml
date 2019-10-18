@@ -16,14 +16,6 @@ jobs:
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/mongo:3.4.4
     working_directory: ~/repo
-    
-     docker:
-        - image: circleci/golang:latest
-        steps:
-            - checkout
-            - run: make build
-            - store_artifacts:
-                path: /bin/final_build
             
     steps:
       - checkout    
@@ -75,6 +67,9 @@ jobs:
       - run: 
           name: run tests
           command: . TestCycle.sh
+          
+      - store_artifacts:
+          path: /bin/final_build
 
 workflows:
   version: 2
