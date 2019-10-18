@@ -19,7 +19,7 @@ RSpec.configure do |config|
     puts "\n  Screenshot: #{screenshot_path}"
 end
 
-config.after(:each) do |example|
+config.after(:each) do
     if example.metadata[:js]
         save_timestamped_screenshot(Capybara.page, example.metadata) if example.exception
     end
