@@ -1,7 +1,7 @@
-#!/usr/bin/env ruby 
+-#!/usr/bin/env ruby 
 RSpec.configure do |config|
     
-    def save_timestamped_screenshot(page, meta)
+def saveScreenshot(page, meta)
     filename = File.basename(meta[:file_path])
     line_number = meta[:line_number]
     
@@ -18,7 +18,7 @@ end
 
 config.after(:each) do
     if example.metadata[:js]
-        save_timestamped_screenshot(Capybara.page, example.metadata) if example.exception
+        saveScreenshot(Capybara.page, example.metadata) if example.exception
     end
 end
 
