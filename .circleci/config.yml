@@ -61,14 +61,13 @@ jobs:
           
           
       - run: 
-          name: take screenshots
-          command: . spec_helper.rb
+          name: run tests
+          command: . TestCycle.sh
           
           
       - run: 
           name: run tests
-          command: . TestCycle.sh
-          
+          command: . spec_helper.rb
 
 workflows:
   version: 2
