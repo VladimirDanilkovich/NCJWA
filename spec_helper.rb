@@ -1,8 +1,4 @@
-
-
 RSpec.configure do |config|
-    
-    # ... other configuration options
     
     def save_timestamped_screenshot(page, meta)
     filename = File.basename(meta[:file_path])
@@ -25,5 +21,4 @@ config.after(:each) do |example|
     end
 end
 
-# ... other configuration options
 end
