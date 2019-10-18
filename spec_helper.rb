@@ -1,4 +1,3 @@
-/bin/env ruby 
 RSpec.configure do |config|
     
 def saveScreenshot(page, meta)
