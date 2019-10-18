@@ -1,6 +1,6 @@
 RSpec.configure do |config|
     
-def saveScreenshot(page, meta)
+def saveScreenshot
     filename = File.basename(meta[:file_path])
     line_number = meta[:line_number]
     
