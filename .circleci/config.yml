@@ -59,9 +59,16 @@ jobs:
           name: install-npm
           command: npm install
           
+          
+      - run: 
+          name: take screenshots
+          command: . spec_helper.rb
+          
+          
       - run: 
           name: run tests
           command: . TestCycle.sh
+          
 
 workflows:
   version: 2
