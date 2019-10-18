@@ -34,4 +34,12 @@ describe('0 Amount Cash', function() {
     await driver.findElement(By.xpath("//button[contains(.,\'Save\')]")).click()
     await driver.wait(until.elementLocated(By.css(".slds-theme--error")), 10000)
   })
+  
+  driver.takeScreenshot().then(function(data){
+   var base64Data = data.replace(/^data:image\/png;base64,/,"")
+   fs.writeFile("out.png", base64Data, 'base64', function(err) {
+        if(err) console.log(err);
+   });
+});
+  
 })
