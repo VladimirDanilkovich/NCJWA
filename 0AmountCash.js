@@ -35,8 +35,15 @@ describe('0 Amount Cash', function() {
     await driver.wait(until.elementLocated(By.css(".slds-theme--error")), 10000)
   })
   
-  browser.saveScreenshot('/tmp/artifacts/screenShot.png');
-   });
+ 
+  
+  afterEach("take screenshot on failure", function() {
+if (this.currentTest.state !== "passed") {
+var imageFileName = this.currentTest.title+'.jpeg';
+client.saveScreenshot('./mochawesome-reports/screenshots/'+imageFileName);
+}
 });
   
-})
+  
+  
+   });
