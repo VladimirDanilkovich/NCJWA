@@ -53,4 +53,25 @@ public class 0AmountCashTest {
       wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".slds-theme--error")));
     }
   }
+  private void takeScreenshot(String className, String method, LocalTime timestamp) {
+  if (driver instanceof TakesScreenshot) {
+     TakesScreenshot screenshotTakingDriver = (TakesScreenshot) this.driver;
+     try {
+        File localScreenshots = new File(new File("target"), "screenshots");
+        if (!localScreenshots.exists() || !localScreenshots.isDirectory()) {
+           localScreenshots.mkdirs();
+        }
+        File screenshot = new File(localScreenshots, className + "_" + method + "_" + timestamp.getHour() + "." + timestamp.getMinute() + ".png");
+        FileUtils.moveFile(screenshotTakingDriver.getScreenshotAs(OutputType.FILE), screenshot);
+        logger.info("Screenshot for class={} method={} saved in: {}", className, method, screenshot.getAbsolutePath());
+     } catch (Exception e1) {
+        logger.error("Unable to take screenshot", e1);
+     }
+  } else {
+     logger.info("Driver '{}' can't take screenshots so skipping it.", driver.getClass());
+  }
 }
+}
+
+
+
