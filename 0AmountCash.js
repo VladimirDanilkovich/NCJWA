@@ -35,10 +35,9 @@ describe('0 Amount Cash', function() {
     await driver.wait(until.elementLocated(By.css(".slds-theme--error")), 10000)
   })
   
-  driver.takeScreenshot().then(function(data){
-   var base64Data = data.replace(/^data:image\/png;base64,/,"")
-   fs.writeFile("out.png", base64Data, 'base64', function(err) {
-        if(err) console.log(err);
+  filename = Join-Path (Get-Location).Path "01_GoogleLandingPage.png"
+  screenshot = driver.GetScreenshot()
+  screenshot.SaveAsFile(filename, [System.Drawing.Imaging.ImageFormat]::Png)
    });
 });
   
