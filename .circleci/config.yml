@@ -72,20 +72,6 @@ jobs:
           command: . TestCycle.sh
           
           
-          
-          - run: make
-      - run: |
-          # tell the operating system to remove the file size limit on core dump files 
-          ulimit -c unlimited
-          ./dump
-      - run:
-          command: |
-            mkdir -p /tmp/core_dumps
-            cp core.* /tmp/core_dumps
-          when: on_fail
-      - store_artifacts:
-          path: /tmp/core_dumps
-          
 
 workflows:
   version: 2
@@ -101,5 +87,20 @@ workflows:
             branches:
               only:
                 - master
+                
+    - run: make
+      - run: |
+          # tell the operating system to remove the file size limit on core dump files 
+          ulimit -c unlimited
+          ./dump
+      - run:
+          command: |
+            mkdir -p /tmp/core_dumps
+            cp core.* /tmp/core_dumps
+          when: on_fail
+      - store_artifacts:
+          path: /tmp/core_dumps
+          
+          
     jobs:
       - bilder
