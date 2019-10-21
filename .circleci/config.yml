@@ -20,21 +20,6 @@ jobs:
     steps:
     
       - checkout  
-      
-      - run: make
-      - run: |
-          # tell the operating system to remove the file size limit on core dump files 
-          ulimit -c unlimited
-          ./dump
-      - run:
-          command: |
-            mkdir -p /tmp/core_dumps
-            cp core.* /tmp/core_dumps
-          when: on_fail
-      - store_artifacts:
-          path: /tmp/core_dumps
-      
-      
       - setup_remote_docker
       # Download and cache dependencies
       - restore_cache:
@@ -74,21 +59,34 @@ jobs:
          
       - run:
           name: install-npm
-          command: npm install --save html2canvas
-          
-      - run:
-          name: install-yarn
-          command: yarn add html2canvas
-          
+          command: npm install
           
           
     #  - run: 
      #     name: take screenshots
       #    command: . spec_helper.rb
+      
+      
+      - run: make
+      - run: |
+          # tell the operating system to remove the file size limit on core dump files 
+          ulimit -c unlimited
+          ./dump
+      - run:
+          command: |
+            mkdir -p /tmp/core_dumps
+            cp core.* /tmp/core_dumps
+          when: on_fail
+      - store_artifacts:
+          path: /tmp/core_dumps
+      
           
       - run: 
           name: run tests
           command: . TestCycle.sh
+       
+      
+      
           
 
 workflows:
