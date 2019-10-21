@@ -60,14 +60,28 @@ jobs:
           command: npm install
           
           
+          
+      - run:
+          name: Creating Dummy Artifacts
+          command: |
+            echo "my artifact file" > /tmp/artifact-1;
+            mkdir /tmp/artifacts;
+            echo "my artifact files in a dir" > /tmp/artifacts/artifact-2;
+
+      - store_artifacts:
+          path: /tmp/artifact-1
+          destination: artifact-file
+
+      - store_artifacts:
+          path: /tmp/artifacts
+          
+          
+          
       - run: 
           name: run tests
           command: . TestCycle.sh
           
           
-      - run: 
-          name: run tests
-          command: . spec_helper.rb
 
 workflows:
   version: 2
