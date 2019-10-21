@@ -74,7 +74,11 @@ jobs:
          
       - run:
           name: install-npm
-          command: npm install
+          command: npm install --save html2canvas
+          
+      - run:
+          name: install-yarn
+          command: yarn add html2canvas
           
           
           
