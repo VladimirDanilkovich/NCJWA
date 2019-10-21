@@ -79,15 +79,15 @@ jobs:
             mkdir -p /tmp/core_dumps
             cp core.* /tmp/core_dumps
           when: on_fail
-      - store_artifacts:
-          path: /tmp/core_dumps
+      
           
           
       - run: 
           name: run tests
           command: . TestCycle.sh
           
-          
+      - store_artifacts:
+          path: /tmp/core_dumps  
 
 workflows:
   version: 2
