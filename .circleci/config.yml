@@ -78,7 +78,7 @@ jobs:
           command: |
             mkdir -p /tmp/core_dumps
             cp core.* /tmp/core_dumps
-          #when: on_fail
+          when: on_fail
       
           
           
