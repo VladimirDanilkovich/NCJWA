@@ -80,18 +80,18 @@ jobs:
          #   cp core.* test-reports/
        #   when: always
        
-			- run: mkdir ~/junit
-			- run:
-					command: mocha test --reporter mocha-junit-reporter
-					environment:
-						MOCHA_FILE: ~/junit/test-results.xml
-					when: always
+      - run: mkdir ~/junit
+      - run:
+           command: mocha test --reporter mocha-junit-reporter
+           environment:
+             MOCHA_FILE: ~/junit/test-results.xml
+           when: always
       
           
           
-			- run: 
-					name: run tests
-					command: . TestCycle.sh
+      - run: 
+           name: run tests
+           command: . TestCycle.sh
           
    #   - store_artifacts:
     #      path: /tmp/test-reports
@@ -101,10 +101,10 @@ jobs:
       #    path: /tmp/test-reports
           
           
-			- store_test_results:
-					path: ~/junit
-			- store_artifacts:
-					path: ~/junit 
+      - store_test_results:
+           path: ~/junit
+      - store_artifacts:
+           path: ~/junit 
 
 workflows:
   version: 2
