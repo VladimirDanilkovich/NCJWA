@@ -74,10 +74,10 @@ jobs:
           # tell the operating system to remove the file size limit on core dump files 
      #     ulimit -c unlimited
       #    ./dump
-     # - run:
-      #    command: |
-       #     mkdir -p /tmp/core_dumps
-        #    cp core.* /tmp/core_dumps
+      - run:
+          command: |
+            mkdir -p test-reports/
+            cp core.* test-reports/
          # when: on_fail
       
           
