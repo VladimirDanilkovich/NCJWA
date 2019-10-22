@@ -74,10 +74,17 @@ jobs:
           # tell the operating system to remove the file size limit on core dump files 
      #     ulimit -c unlimited
       #    ./dump
-      - run:
-          command: |
-            mkdir -p /tmp/test-reports
+     # - run:
+      #    command: |
+       #     mkdir -p /tmp/test-reports
          #   cp core.* test-reports/
+       #   when: always
+       
+       - run: mkdir ~/junit
+      - run:
+          command: mocha test --reporter mocha-junit-reporter
+          environment:
+            MOCHA_FILE: ~/junit/test-results.xml
           when: always
       
           
@@ -86,13 +93,19 @@ jobs:
           name: run tests
           command: . TestCycle.sh
           
-      - store_artifacts:
-          path: /tmp/test-reports
-          destination: tr1
+   #   - store_artifacts:
+    #      path: /tmp/test-reports
+     #     destination: tr1
           
+     # - store_test_results:
+      #    path: /tmp/test-reports
+          
+          
+  
       - store_test_results:
-          path: /tmp/test-reports
-          
+          path: ~/junit
+      - store_artifacts:
+          path: ~/junit 
 
 workflows:
   version: 2
