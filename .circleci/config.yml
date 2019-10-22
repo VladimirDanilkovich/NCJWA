@@ -66,8 +66,13 @@ jobs:
           
           
       - run:
-          name: install-mocha-junit-reporter
-          command: npm install mocha-junit-reporter --save-dev
+          name: install-html2canvas
+          command: npm install --save html2canvas
+          
+          
+      - run:
+          name: install-yarn
+          command: yarn add html2canvas
           
           
     #  - run: 
