@@ -77,7 +77,7 @@ jobs:
       - run:
           command: |
             mkdir -p test-reports/
-            cp core.* test-reports/
+         #   cp core.* test-reports/
          # when: on_fail
       
           
