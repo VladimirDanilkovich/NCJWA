@@ -86,11 +86,11 @@ jobs:
        #   when: always
        
       - run: mkdir ~/junit
-      - run:
-           command: mocha test --reporter mocha-junit-reporter --reporter-options mochaFile= /Cash.js
-           environment:
-             MOCHA_FILE: ~/junit/test-results.xml
-           when: always
+     # - run:
+      #     command: mocha test --reporter mocha-junit-reporter --reporter-options mochaFile= /Cash.js
+       #    environment:
+        #     MOCHA_FILE: ~/junit/test-results.xml
+         #  when: always
       
           
           
