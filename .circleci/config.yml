@@ -86,7 +86,6 @@ jobs:
           command: |
             mkdir -p /tmp/test-reports
             mkdir -p /tmp/artifacts
-            cp core.* /tmp/test-reports
           when: always
      
           
