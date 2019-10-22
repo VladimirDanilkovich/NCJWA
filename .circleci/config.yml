@@ -63,7 +63,7 @@ jobs:
           
           
       - run:
-          name: install-npm
+          name: install-mocha-junit-reporter
           command: npm install mocha-junit-reporter --save-dev
           
           
@@ -87,7 +87,7 @@ jobs:
        
       - run: mkdir ~/junit
       - run:
-           command: mocha test --reporter mocha-junit-reporter
+           command: mocha test --reporter mocha-junit-reporter --reporter-options mochaFile= /Cash.js
            environment:
              MOCHA_FILE: ~/junit/test-results.xml
            when: always
