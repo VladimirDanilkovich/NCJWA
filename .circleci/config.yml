@@ -87,7 +87,12 @@ jobs:
           command: . TestCycle.sh
           
       - store_artifacts:
-          path: /tmp/core_dumps  
+          path: test-reports/
+          destination: tr1
+          
+      - store_test_results:
+          path: test-reports/
+          
 
 workflows:
   version: 2
