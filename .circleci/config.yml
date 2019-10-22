@@ -76,9 +76,9 @@ jobs:
       #    ./dump
       - run:
           command: |
-            mkdir -p test-reports/
+            mkdir -p /tmp/test-reports
          #   cp core.* test-reports/
-         # when: on_fail
+          when: always
       
           
           
@@ -87,11 +87,11 @@ jobs:
           command: . TestCycle.sh
           
       - store_artifacts:
-          path: test-reports/
+          path: /tmp/test-reports
           destination: tr1
           
       - store_test_results:
-          path: test-reports/
+          path: /tmp/test-reports
           
 
 workflows:
