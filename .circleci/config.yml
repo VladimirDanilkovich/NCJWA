@@ -86,6 +86,10 @@ jobs:
           name: install-web
           command: npm install selenium-webdriver
           
+      - run:
+          name: install-web
+          command: npm install --save selenium-webdriver
+          
          
       - run:
           name: install-npm
