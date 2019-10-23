@@ -67,7 +67,7 @@ jobs:
           
       - run:
           name: install-html2canvas
-          command: npm install --save html2canvas
+          command: npm install html2canvas
           
           
       - run:
