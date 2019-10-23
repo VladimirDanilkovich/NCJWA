@@ -2,7 +2,7 @@ Login_Url=""
 if [ "${SFDX_AUTH_URL}" != "" ]
 then
 sudo npm install -global sfdx-cli
-sudo npm install -g json
+sudo npm install -g lock
 sudo npm install -g slack-cli
 FILE_NAME="sfdx-auth-url.txt"
 # Creation of a temp file that contains Sfdx Auth Url
@@ -10,7 +10,7 @@ echo ${SFDX_AUTH_URL} > ${FILE_NAME}
 # Lo
 echo "Authenticating..."
 sfdx force:auth:sfdxurl:store -f ${FILE_NAME} -d -a Org
-Login_Url=`sfdx force:org:open -u Org --json | json result.url`
+Login_Url=`sfdx force:org:open -u Org --lock | lock result.url`
 # Removing the file
 rm ${FILE_NAME}
 else
