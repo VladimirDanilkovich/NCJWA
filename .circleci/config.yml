@@ -33,12 +33,12 @@ jobs:
 #          - v1-dependencies-
 
       - run: npm install
-      - run:
-          name: install-yarn
-          command: yarn
-      - run:
-          name: Install Dependencies
-          command: yarn install --frozen-lockfile
+    #  - run:
+     #     name: install-yarn
+      #    command: yarn
+     # - run:
+        #  name: Install Dependencies
+       #   command: yarn install --frozen-lockfile
       - restore_cache:
           name: Restore Yarn Package Cache
           keys:
