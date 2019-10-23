@@ -34,6 +34,9 @@ jobs:
 
       - run: npm install
       - run:
+          name: install-yarn
+          command: yarn
+      - run:
           name: Install Dependencies
           command: yarn install --frozen-lockfile
       - restore_cache:
@@ -93,10 +96,6 @@ jobs:
           name: install-html2canvas
           command: npm install html2canvas
           
-          
-      - run:
-          name: install-yarn
-          command: yarn
           
           
       - run:
