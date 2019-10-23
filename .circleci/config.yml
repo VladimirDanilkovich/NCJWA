@@ -84,11 +84,7 @@ jobs:
         #  command: . credentials.sh
       - run:
           name: install-web
-          command: npm install selenium-webdriver
-          
-      - run:
-          name: install-web
-          command: npm install --save selenium-webdriver
+          command: npm install selenium-webdriver --save
           
          
       - run:
